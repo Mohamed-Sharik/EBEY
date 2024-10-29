@@ -1,0 +1,84 @@
+.foot-out {
+  background-color: #000000;
+  color: #ffffff;
+}
+.foot-inn {
+  display: grid;
+  row-gap: 50px;
+  padding-top: 40px;
+}
+.foot-top-cnt,
+.foot-bot-cnt {
+  display: flex;
+  justify-content: space-between;
+}
+.logo-cnt {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  padding-bottom: 15px;
+}
+.com-log {
+  width: 40px;
+  box-shadow: 0 0 3.32px 1.66px #ffd470;
+  border-radius: 10px;
+  background-color: #000000;
+}
+.com-log img {
+  width: 100%;
+}
+.com-name h3 {
+  font-family: "Racing Sans One", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+/*.com-log {
+  width: 50px;
+  box-shadow: 0 0 3.32px 1.66px #ffd470;
+  border-radius: 10px;
+}
+.com-log img {
+  width: 100%;
+}
+.com-name h3 {
+  font-family: "Racing Sans One", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+ } */
+.com-det p {
+  max-width: 310px;
+  margin-bottom: 0;
+  font-size: .9rem;
+}
+.abt-lst ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.abt-lst a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.abt-ttl h5 {
+  margin-bottom: 1rem;
+}
+
+.scm-lst {
+  display: flex;
+  column-gap: 10px;
+}
+.policy {
+  display: flex;
+  column-gap: 10px;
+}
+.policy a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.scm-img {
+  width: 20px;
+}
+

@@ -1,0 +1,37 @@
+.page-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 60px;
+  padding-top: 15px;
+  padding-bottom: 70px;
+  border-top: 3px solid #e6e6e6;
+}
+
+.prev-cnt button,
+.nxt-cnt button,
+.page-cnt button {
+  border: none;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.page-cnt {
+  display: flex;
+  column-gap: 20px;
+}
+.page-cnt button.inactive {
+  color: #6b6565;
+}
+
+.prev-cnt button.inactive,
+.nxt-cnt button.inactive {
+  color: #6b6565;
+  cursor: not-allowed;
+}
+.prev-cnt button.active,
+.nxt-cnt button.active,
+.page-cnt button.active {
+  color: #000;
+}

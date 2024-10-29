@@ -1,0 +1,80 @@
+.card-wrap {
+  border: 1px solid transparent;
+  border-radius: 20px;
+  position: relative;
+}
+.prod-img {
+  padding: 10px;
+  max-width: 140px;
+  max-height: 140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.prod-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.ttl,
+.price {
+  padding: 0 20px;
+}
+.cart-btn {
+ padding-left: 20px;
+ padding-bottom: 15px;
+}
+.ttl p {
+  font-weight: 300;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.price h5 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+/* .card-wrap button {
+  width: 100%;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: #ffd470;
+  visibility: hidden;
+}
+.card-wrap:hover .card-wrap button {
+  visibility: visible;
+} */
+.card-wrap :nth-child(2) button {
+  padding: 5px 0;
+  width: 90%;
+  border-radius: 7px;
+  font-size: 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.card-wrap:hover button {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.card-wrap:hover {
+  border-color: #6b6565;
+}
+
+.fav-icon {
+  position: absolute;
+  top: 14px;
+  right: 12px;
+}
+.fav-icon button {
+  border: none;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+}

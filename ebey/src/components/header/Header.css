@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.wrapper,
+.funtc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper {
+  padding: 30px;
+  border-bottom: 3px solid #e6e6e6;
+}
+.brand-con {
+  display: flex;
+  column-gap: 50px;
+  align-items: center;
+}
+
+.brand-cnt {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+.logo {
+  max-width: 50px;
+  border-radius: 10px;
+  background-color: #000;
+}
+.logo img {
+  width: 100%;
+  box-shadow: 0 0 7.72px 3.86px #ffd470;
+  border-radius: 10px;
+}
+.brand-name {
+  width: min-content;
+}
+.brand-name h2 {
+  font-family: "Racing Sans One", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.brand-nav ul {
+  list-style: none;
+  display: flex;
+  column-gap: 40px;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+/* .brand-nav {
+  position: relative;
+}
+.brand-nav a {
+  text-decoration: none;
+  color: #6b6565;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.brand-nav a.active {
+  color: #000;
+  font-weight: bold;
+}
+.brand-nav a.active + .page-indicator {
+  visibility: visible;
+}
+.page-indicator {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #000;
+  position: absolute;
+  left: 24.4%;
+  top: 28%;
+  visibility: hidden;
+} */
+
+/* .brand-nav {
+  position: relative;
+} */
+
+.brand-nav a {
+  text-decoration: none;
+  color: #6b6565;
+  font-weight: 500;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.brand-nav a.active {
+  color: #000;
+  font-weight: bold;
+}
+
+.page-indicator {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #000;
+  position: absolute;
+  left: 35%;
+  top: 180%;
+  visibility: hidden;
+}
+
+.brand-nav a.active .page-indicator {
+  visibility: visible;
+}
+
+/* .logo {
+  max-width: 80px;
+  border-radius: 10px;
+}
+.logo img {
+  width: 100%;
+}
+.brand-name{
+  width: min-content;
+}
+.brand-name h2 {
+  font-family: "Racing Sans One", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0;
+} */
+.funtc {
+  column-gap: 30px;
+}
+.funtc button {
+  background-color: transparent;
+  border: none;
+  width: 30px;
+}
+
+.search {
+  background-color: #d9d9d9;
+  margin-right: -10px;
+  height: fit-content;
+  padding: 15px 25px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-right: 10px;
+}
+.user {
+  position: relative;
+}
+.user-arrow {
+  position: absolute;
+  top: -7px;
+  right: -9px;
+}
