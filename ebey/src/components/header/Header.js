@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import "./Header.css";
 import { SearchCon } from "../../contexts/SearchContext/SearchContext";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Header() {
   const { getData, cartData } = useContext(SearchCon);
+  const navigate = useNavigate();
 
   const GetInput = (event) => {
     if (event.key === "Enter") {
@@ -53,7 +54,7 @@ function Header() {
               <img src="/icons/search-icon.svg" alt="" width={20} height={20} />
             </button>
           </div>
-          <div className="cart">
+          <div className="cart" onClick={() => navigate(`/cart`)}>
             <button>
               <img src="/icons/cart-icon.svg" alt="" width={30} height={30} />
               {cartData.length > 0 && (

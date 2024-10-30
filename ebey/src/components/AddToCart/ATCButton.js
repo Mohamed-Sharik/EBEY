@@ -1,15 +1,33 @@
-import { useContext} from "react";
-import "../AddToCart/ATCButton.css";
-import { SearchCon } from "../../contexts/SearchContext/SearchContext";
-import { useNavigate } from "react-router-dom";
+// import "../AddToCart/ATCButton.css";
+// import { useNavigate } from "react-router-dom";
 
-export default function ATC({ prods }) {
-  const { addToCart } = useContext(SearchCon);
+// export default function ATC({ prods }) {
+//   const navigate = useNavigate();
+
+//   const handleAddToCart = () => {
+//     console.log(prods);
+//     alert("Products added")
+//     navigate("/cart");
+//   };
+
+//   return (
+//     <div className="cart-btn">
+//       <button onClick={handleAddToCart}>Add to Cart</button>
+//     </div>
+//   );
+// }
+
+import "../AddToCart/ATCButton.css";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { SearchCon } from "../../contexts/SearchContext/SearchContext";
+
+export default function ATC({ product }) {
   const navigate = useNavigate();
+  const { addToCart } = useContext(SearchCon);
 
   const handleAddToCart = () => {
-    console.log(prods);
-    addToCart(prods);
+    addToCart(product);
     navigate("/cart");
   };
 

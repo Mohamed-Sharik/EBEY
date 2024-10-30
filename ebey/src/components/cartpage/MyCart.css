@@ -1,6 +1,20 @@
-.cart-img{
-    max-width: 150px;
+.cart-item {
+  display: flex;
+  justify-content: space-between;
 }
-.cart-img img{
-    width: 100%;
+.cart-img {
+  max-width: 150px;
+}
+.cart-img img {
+  width: 100%;
+}
+.plus,
+.minus {
+  background-color: black;
+  color:antiquewhite;
+  max-width: 30px;
+  max-height: 20px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
 }
