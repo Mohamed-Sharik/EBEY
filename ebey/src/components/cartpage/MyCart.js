@@ -31,6 +31,7 @@
 import "../cartpage/MyCart.css";
 import { useContext } from "react";
 import { SearchCon } from "../../contexts/SearchContext/SearchContext";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 function MyCart() {
   const { cartData, removeFromCart, clearCart } = useContext(SearchCon);
@@ -45,7 +46,7 @@ function MyCart() {
 
   return (
     <div className="my-cart container">
-      <h1>Shopping Cart</h1>
+      <h1>My Cart</h1>
       {cartData.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
@@ -56,22 +57,17 @@ function MyCart() {
                 <div className="cart-img">
                   <img src={item.img} alt={item.title} />
                 </div>
-                <h2>{item.title}</h2>
+                <h5>{item.title}</h5>
+                <p>{item.desc}</p>
               </div>
               <div className="cart-rgt">
+                <p>Brand: {item.brand}</p>
+                <p>Category: {item.catg}</p>
                 <p>Price: ${item.price}</p>
-                <p>
-                  Quantity: <button className="plus">+</button>
-                  {item.quantity}
-                  <button className="minus">-</button>
-                </p>
-                <div>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => handleRemove(item.id)}
-                  >
-                    Remove
-                  </button>
+                <div className="quantity">
+                  <button className="plus">+</button>
+                  {item.quantity} <button className="minus">-</button>
+                  <DeleteForeverIcon onClick={() => handleRemove(item.id)} />
                 </div>
               </div>
             </div>

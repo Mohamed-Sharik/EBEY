@@ -219,7 +219,15 @@ function ViewProduct() {
                 </div>
                 <ATC
                   style={{ visibility: "visible !important" }}
-                  product={singleData}
+                  product={{
+                    id: singleData.id,
+                    title: singleData.title,
+                    catg: singleData.catg,
+                    brand: singleData.brand,
+                    desc: singleData.description,
+                    price: singleData.price,
+                    img: singleData.images,
+                  }}
                 />
               </div>
             </div>

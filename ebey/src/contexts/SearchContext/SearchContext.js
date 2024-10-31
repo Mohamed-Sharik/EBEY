@@ -48,8 +48,6 @@
 //     }
 //   };
 
-
-
 //   return (
 //     <SearchCon.Provider
 //       value={{
@@ -63,7 +61,6 @@
 //   );
 // };
 // export default SCProvider;
-
 
 import { createContext, useReducer } from "react";
 import { reducer } from "./SearchReducer";
@@ -129,10 +126,12 @@ const SCProvider = ({ children }) => {
         return item;
       });
       dispatch({ type: ProdActions.UPDATE_CART, payload: updatedCartData });
+      console.log(updatedCartData);
     } else {
       // Add new product with quantity 1
       const newProduct = { ...product, quantity: 1 };
       dispatch({ type: ProdActions.ADD_TO_CART, payload: newProduct });
+      console.log(newProduct);
     }
   };
 

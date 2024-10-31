@@ -58,6 +58,9 @@ function CustCard(props) {
         product={{
           id: props.id,
           title: props.title,
+          catg: props.catg,
+          brand: props.brand,
+          desc: props.desc,
           price: props.price,
           img: props.img,
         }}
