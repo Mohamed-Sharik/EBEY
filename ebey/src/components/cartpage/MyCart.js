@@ -34,7 +34,13 @@ import { SearchCon } from "../../contexts/SearchContext/SearchContext";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 function MyCart() {
-  const { cartData, removeFromCart, clearCart } = useContext(SearchCon);
+  const {
+    cartData,
+    removeFromCart,
+    clearCart,
+    updateQuantity,
+    calculateTotalPrice,
+  } = useContext(SearchCon);
 
   const handleRemove = (id) => {
     removeFromCart(id);
@@ -43,6 +49,12 @@ function MyCart() {
   const handleClearCart = () => {
     clearCart();
   };
+
+  const handleQuantityChange = (id, amount) => {
+    updateQuantity(id, amount);
+  };
+
+  const totalPrice = calculateTotalPrice();
 
   return (
     <div className="my-cart container">
@@ -65,13 +77,25 @@ function MyCart() {
                 <p>Category: {item.catg}</p>
                 <p>Price: ${item.price}</p>
                 <div className="quantity">
-                  <button className="plus">+</button>
-                  {item.quantity} <button className="minus">-</button>
+                  <button
+                    className="plus"
+                    onClick={() => handleQuantityChange(item.id, 1)}
+                  >
+                    +
+                  </button>
+                  {item.quantity}{" "}
+                  <button
+                    className="minus"
+                    onClick={() => handleQuantityChange(item.id, -1)}
+                  >
+                    -
+                  </button>
                   <DeleteForeverIcon onClick={() => handleRemove(item.id)} />
                 </div>
               </div>
             </div>
           ))}
+          <h2>Total: ${totalPrice}</h2>
           <button className="btn btn-warning" onClick={handleClearCart}>
             Clear Cart
           </button>

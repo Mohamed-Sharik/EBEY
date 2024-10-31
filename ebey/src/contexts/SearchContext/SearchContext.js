@@ -134,6 +134,24 @@ const SCProvider = ({ children }) => {
       console.log(newProduct);
     }
   };
+// QUANTITY UPDATE
+  const updateQuantity = (id, amount) => {
+    const updatedCartData = state.cartData.map((item) => {
+      if (item.id === id) {
+        const newQuantity = item.quantity + amount;
+        return { ...item, quantity: newQuantity > 0 ? newQuantity : 1 }; // Prevent quantity from going below 1
+      }
+      return item;
+    });
+    dispatch({ type: ProdActions.UPDATE_CART, payload: updatedCartData });
+  };
+
+  // Calculate total price
+  const calculateTotalPrice = () => {
+    return state.cartData
+      .reduce((total, item) => total + item.price * item.quantity, 0)
+      .toFixed(2);
+  };
 
   // Remove from Cart
   const removeFromCart = (id) => {
@@ -155,6 +173,8 @@ const SCProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         clearCart,
+        updateQuantity,
+        calculateTotalPrice,
       }}
     >
       {children}
