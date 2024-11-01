@@ -31,9 +31,8 @@ function DisplayProd() {
               id={val.id}
               img={val.thumbnail}
               title={val.title}
-              catg={val.category }
+              catg={val.category}
               brand={val.brand}
-              desc={val.description}
               price={val.price}
             />
           ))}

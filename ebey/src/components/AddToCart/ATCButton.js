@@ -1,12 +1,14 @@
 // import "../AddToCart/ATCButton.css";
 // import { useNavigate } from "react-router-dom";
+// import { useContext } from "react";
+// import { SearchCon } from "../../contexts/SearchContext/SearchContext";
 
-// export default function ATC({ prods }) {
+// export default function ATC({ product }) {
 //   const navigate = useNavigate();
+//   const { addToCart } = useContext(SearchCon);
 
 //   const handleAddToCart = () => {
-//     console.log(prods);
-//     alert("Products added")
+//     addToCart(product);
 //     navigate("/cart");
 //   };
 

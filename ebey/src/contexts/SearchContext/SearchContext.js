@@ -48,12 +48,69 @@
 //     }
 //   };
 
+//   // GETTING CART
+//   const addToCart = (product) => {
+//     const existingProductIndex = state.cartData.findIndex(
+//       (item) => item.id === product.id
+//     );
+//     if (existingProductIndex !== -1) {
+//       // Update quantity
+//       const updatedCartData = state.cartData.map((item, index) => {
+//         if (index === existingProductIndex) {
+//           return { ...item, quantity: item.quantity + 1 };
+//         }
+//         return item;
+//       });
+//       dispatch({ type: ProdActions.UPDATE_CART, payload: updatedCartData });
+//       console.log(updatedCartData);
+//     } else {
+//       // Add new product with quantity 1
+//       const newProduct = { ...product, quantity: 1 };
+//       dispatch({ type: ProdActions.ADD_TO_CART, payload: newProduct });
+//       console.log(newProduct);
+//     }
+//   };
+//   // QUANTITY UPDATE
+//   const updateQuantity = (id, amount) => {
+//     const updatedCartData = state.cartData.map((item) => {
+//       if (item.id === id) {
+//         const newQuantity = item.quantity + amount;
+//         return { ...item, quantity: newQuantity > 0 ? newQuantity : 1 }; // Prevent quantity from going below 1
+//       }
+//       return item;
+//     });
+//     dispatch({ type: ProdActions.UPDATE_CART, payload: updatedCartData });
+//   };
+
+//   // Calculate total price
+//   const calculateTotalPrice = () => {
+//     return state.cartData
+//       .reduce((total, item) => total + item.price * item.quantity, 0)
+//       .toFixed(2);
+//   };
+
+//   // Remove from Cart
+//   const removeFromCart = (id) => {
+//     const updatedCartData = state.cartData.filter((item) => item.id !== id);
+//     dispatch({ type: ProdActions.REMOVE_FROM_CART, payload: updatedCartData });
+//   };
+
+//   // Clear Cart
+//   const clearCart = () => {
+//     dispatch({ type: ProdActions.CLEAR_CART });
+//   };
+
 //   return (
 //     <SearchCon.Provider
 //       value={{
 //         ...state,
 //         getData,
 //         fetchSingleProduct,
+//         addToCart,
+//         removeFromCart,
+//         clearCart,
+//         updateQuantity,
+//         calculateTotalPrice,
 //       }}
 //     >
 //       {children}
@@ -62,7 +119,7 @@
 // };
 // export default SCProvider;
 
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import { reducer } from "./SearchReducer";
 import { ProdActions } from "./Actions";
 import { APIURL } from "../../components/Apiurl/Url";
@@ -74,9 +131,13 @@ const SCProvider = ({ children }) => {
   const initialState = {
     fetchedData: [],
     singleData: null,
-    cartData: [],
+    cartData: JSON.parse(localStorage.getItem("cartData")) || [],
   };
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    localStorage.setItem("cartData", JSON.stringify(state.cartData));
+  }, [state.cartData]);
 
   // GETTING ALL PRODUCTS
   const getData = async (items) => {
@@ -134,7 +195,7 @@ const SCProvider = ({ children }) => {
       console.log(newProduct);
     }
   };
-// QUANTITY UPDATE
+  // QUANTITY UPDATE
   const updateQuantity = (id, amount) => {
     const updatedCartData = state.cartData.map((item) => {
       if (item.id === id) {
@@ -162,6 +223,7 @@ const SCProvider = ({ children }) => {
   // Clear Cart
   const clearCart = () => {
     dispatch({ type: ProdActions.CLEAR_CART });
+    localStorage.removeItem("cartData");
   };
 
   return (

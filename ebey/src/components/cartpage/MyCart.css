@@ -1,15 +1,30 @@
+.cart-det {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.cart-card {
+  padding-bottom: 30px;
+}
 .cart-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 3px solid #666;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 25px;
 }
-.cart-lft{
-  max-width: 35%;
+
+.cart-lft {
+  max-width: 25%;
 }
 .cart-lft h5 {
   font-weight: 600;
   margin-bottom: 0;
 }
+
 .cart-lft p {
   margin-bottom: 0;
 }
@@ -39,4 +54,8 @@
   border-radius: 50%;
   font-size: 1.2rem;
   font-weight: 600;
+}
+.crt-tot {
+  text-align: end;
+  margin-top: 30px;
 }

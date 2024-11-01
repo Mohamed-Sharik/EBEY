@@ -20,7 +20,17 @@
 //           <h5>$ {props.price}</h5>
 //         </div>
 //       </div>
-//       <ATC prods={props} />
+//       <ATC
+//         product={{
+//           id: props.id,
+//           title: props.title,
+//           catg: props.catg,
+//           brand: props.brand,
+//           price: props.price,
+//           img: props.img,
+//         }}
+//       />
+
 //       <div className="fav-icon">
 //         <button>
 //           <img src="./icons/fav-icon.svg" alt="" width={25} height={25} />
@@ -60,7 +70,6 @@ function CustCard(props) {
           title: props.title,
           catg: props.catg,
           brand: props.brand,
-          desc: props.desc,
           price: props.price,
           img: props.img,
         }}

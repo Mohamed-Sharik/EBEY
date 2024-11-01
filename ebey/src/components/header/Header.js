@@ -43,6 +43,13 @@ function Header() {
                 <li className="nav-link">Search </li>
                 <span className="page-indicator"></span>
               </NavLink>
+              <NavLink
+                to="/cart"
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+              >
+                <li className="nav-link">Cart </li>
+                <span className="page-indicator"></span>
+              </NavLink>
             </ul>
           </div>
         </div>
@@ -55,7 +62,7 @@ function Header() {
             </button>
           </div>
           <div className="cart" onClick={() => navigate(`/cart`)}>
-            <button>
+            <button className="crt-btn">
               <img src="/icons/cart-icon.svg" alt="" width={30} height={30} />
               {cartData.length > 0 && (
                 <span className="cart-count">{cartData.length}</span>

@@ -159,3 +159,6 @@
   top: -7px;
   right: -9px;
 }
+.crt-btn{
+  display: flex;
+}

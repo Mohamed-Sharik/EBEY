@@ -28,7 +28,7 @@
 //   const descStyle = {
 //     display: "-webkit-box",
 //     WebkitBoxOrient: "vertical",
-//     WebkitLineClamp: 3,
+//     WebkitLineClamp: 2,
 //     overflow: "hidden",
 //   };
 
@@ -101,7 +101,15 @@
 //                 </div>
 //                 <ATC
 //                   style={{ visibility: "visible !important" }}
-//                   prods={singleData}
+//                   // product={singleData}
+//                   product={{
+//                     id: singleData.id,
+//                     title: singleData.title,
+//                     catg: singleData.category,
+//                     brand: singleData.brand,
+//                     price: singleData.price,
+//                     img: singleData.images[0],
+//                   }}
 //                 />
 //               </div>
 //             </div>
@@ -146,7 +154,7 @@ function ViewProduct() {
   const descStyle = {
     display: "-webkit-box",
     WebkitBoxOrient: "vertical",
-    WebkitLineClamp: 3,
+    WebkitLineClamp: 2,
     overflow: "hidden",
   };
 
@@ -225,7 +233,6 @@ function ViewProduct() {
                     title: singleData.title,
                     catg: singleData.category,
                     brand: singleData.brand,
-                    desc: singleData.description,
                     price: singleData.price,
                     img: singleData.images[0],
                   }}
